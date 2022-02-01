@@ -18,7 +18,15 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />
+        <Route path="signin" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="post" element={<Post />} />
+        <Route path="posts" element={<Posts />} />
+        <Route path="myprofile" element={<MyProfile />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="feed" element={<Feed />} />
+        <Route path="createpost" element={<CreatePost />} />
+        <Route path="bookmarks" element={<Bookmarks />} />
       </Routes>
     </div>
   );
