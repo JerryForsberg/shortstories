@@ -3,20 +3,20 @@ import Container from 'react-bootstrap/Container';
 import NavIcon from '../navIcon';
 import Image from 'react-bootstrap/Image'
 
-function CustomNavbar () {
+function CustomNavbar() {
     return (
-    <>
-        <Navbar bg="light" variant="light">
-            <Container style={styles.container}>
-                <NavIcon title={'Login'}/>
-                <NavIcon title={'Signin'}/>
-                <NavIcon title={'Explore'}/>
+        <>
+            <Navbar bg="light" variant="light">
+                <Container style={styles.container}>
+                    <NavIcon title={'Login'} />
+                    <NavIcon title={'Signin'} />
+                    <NavIcon title={'Explore'} />
+                </Container>
+            </Navbar>
+            <Container>
+                <img src='./images/cover.jpg' />
             </Container>
-        </Navbar>
-        <Container>
-            <img src='./images/cover.jpg'/>
-        </Container>
-    </>
+        </>
     )
 }
 
@@ -35,6 +35,6 @@ const styles = {
         backgroundPosition: 'center', /* Center the image */
         backgroundRepeat: 'no-repeat', /* Do not repeat the image */
         backgroundSize: 'cover', /* Resize the background image to cover the entire container */
-        height: '100vh',  
+        height: '100vh',
     }
 }
