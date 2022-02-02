@@ -1,8 +1,11 @@
-import Button from 'react-bootstrap/Button';
+import Button from '@mui/material/Button'
 
-function NavIcon (props) {
+function NavIcon(props) {
+
+
+
     return (
-        <Button style={styles.button}>{props.title}</Button>
+        <Button variant="text" style={styles.button}>{props.title}</Button>
     )
 }
 
@@ -11,6 +14,7 @@ export default NavIcon;
 const styles = {
     button: {
         border: 'none',
-        backgroundColor: 'white'
+        margin: 20,
+        color: 'white',
     },
 }
