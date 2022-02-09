@@ -8,7 +8,7 @@ import './GlobalCssCard.css';
 
 // sx={{ width: '20%', margin: 5 }}
 
-const StoryCard = () => {
+const StoryCard = ({ props }) => {
     return (
         <Card className='MuiCard-root'>
             <CardActionArea>
@@ -16,16 +16,18 @@ const StoryCard = () => {
                     component="img"
                     height="140"
                     image="/static/images/cards/contemplative-reptile.jpg"
-                    alt="green iguana"
+                    alt={props.image}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-          </Typography>
+                        {props.title}
+                    </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-          </Typography>
+                        {props.description}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        {props.author}
+                    </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>

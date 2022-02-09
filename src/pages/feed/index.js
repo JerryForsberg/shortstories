@@ -1,16 +1,16 @@
 import StoryCard from '../../components/storyCard';
+import stories from '../../utils/stories.json';
+
 
 const Feed = () => {
+    let storyCardArray = []
+    const mapStories = stories.map(story => {
+        storyCardArray.push(story)
+        return <StoryCard props={story}></StoryCard>
+    })
     return (
         <div style={styles.container}>
-            <StoryCard></StoryCard>
-            <StoryCard></StoryCard>
-            <StoryCard></StoryCard>
-            <StoryCard></StoryCard>
-            <StoryCard></StoryCard>
-            <StoryCard></StoryCard>
-            <StoryCard></StoryCard>
-            <StoryCard></StoryCard>
+            {mapStories}
         </div>
     )
 }
