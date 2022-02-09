@@ -1,7 +1,7 @@
 import NavIcon from '../navIcon';
-import{ Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function CustomNavbar() {
+function CustomNavbar(props) {
     return (
         <div style={styles.container}>
             <Link to="/Login"> <NavIcon title={'Login'} /> </Link>
