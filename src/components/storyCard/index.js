@@ -31,7 +31,7 @@ const StoryCard = ({ props }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button size="large" color="primary" style={styles.buttonStyle}>
                     Share
         </Button>
             </CardActions>
@@ -40,3 +40,9 @@ const StoryCard = ({ props }) => {
 }
 
 export default StoryCard
+
+const styles = {
+    buttonStyle: {
+        width: '100%'
+    }
+}

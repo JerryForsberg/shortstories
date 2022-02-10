@@ -1,4 +1,5 @@
 .MuiCard-root {
-    margin: 10px;
-    max-width: 20%;
+    margin: 2%;
+    min-width: 20%;
+    flex-basis: auto;
 }
