@@ -1,12 +1,12 @@
-import SignInButton from "../../components/signInButton"
+import LoginButton from '../../components/LoginButton'
 
 function SignIn() {
     return (
-    <>
-        <div>
-            <SignInButton title="Sign In" />
-        </div>
-    </>
+        <>
+            <div>
+                <LoginButton />
+            </div>
+        </>
     )
 }
 

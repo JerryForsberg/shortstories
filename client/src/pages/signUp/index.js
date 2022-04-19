@@ -1,7 +1,31 @@
-import {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useMutation, gql } from '@apollo/client';
+
+//how to use useQuery: 
+//const QUERY_ALL_USERS = gql'
+//      query users
+
+const CREATE_NEW_USER = gql`
+    mutation AddUser($input: UserInput) {
+        addUser(user: $input) {
+            _id
+            name
+            userName
+            email
+        }
+    } 
+`
 
 export default function SignUp() {
+    const [createUser, { data, error }] = useMutation(CREATE_NEW_USER)
+    if (data) {
+        console.log(data)
+    }
+    if (error) {
+        console.log(error.message)
+    }
+
     const [form, setForm] = useState({
         name: "",
         userName: "",
@@ -23,21 +47,14 @@ export default function SignUp() {
 
         // When a post request is sent to the create url, we'll add a new record to the database.
         const newUser = { ...form };
+        createUser({ variables: { input: newUser } })
+        console.log(form)
 
-        await fetch("http://localhost:5000/users/add", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newUser),
-        })
-            .catch(error => {
-                window.alert(error);
-                return;
-            });
+
+
 
         setForm({ name: "", userName: "", email: "" });
-        navigate("/");
+        // navigate("/");
     }
 
     // This following section will display the form that takes the input from the user.
