@@ -8,7 +8,7 @@ import {
   ApolloProvider,
 } from "@apollo/client";
 import { BrowserRouter } from "react-router-dom";
-import { Auth0Provider } from "@auth0/auth0-react";
+import Auth0ProviderWithHistory from './auth/auth0-provider-with-history';
 
 
 const client = new ApolloClient({
@@ -18,15 +18,11 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <BrowserRouter>
-    <Auth0Provider
-      domain={process.env.REACT_APP_AUTH0_DOMAIN}
-      clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
-      redirectUri={process.env.REACT_APP_REDIRECT_URI}
-    >
+    <Auth0ProviderWithHistory>
       <ApolloProvider client={client}>
         <App />
       </ApolloProvider>
-    </Auth0Provider>
+    </Auth0ProviderWithHistory>
   </BrowserRouter>,
   document.getElementById('root')
 );

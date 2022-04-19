@@ -49,6 +49,7 @@ export default function SignUp() {
         const newUser = { ...form };
         createUser({ variables: { input: newUser } })
         console.log(form)
+        
 
 
 
